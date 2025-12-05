@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nền tảng nghe nhạc trực tuyến hàng đầu - Khám phá hàng triệu bài hát chất lượng cao">
+    <title>MusicStream - Nghe nhạc không giới hạn</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/subscription-notification.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar__content">
+                <a href="index.html" class="navbar__logo">
+                    <i class="fas fa-music"></i>
+                    <span>MusicStream</span>
+                </a>
+                <div class="navbar__actions">
+                    <div class="navbar__auth-actions" id="navbarAuthActions">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero__background">
+            <div class="hero__gradient"></div>
+            <div class="hero__particles" id="heroParticles"></div>
+        </div>
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title">
+                        <span class="hero__title-line">Khám phá âm nhạc</span>
+                        <span class="hero__title-line hero__title-line--highlight">không giới hạn</span>
+                    </h1>
+                    <p class="hero__description">
+                        Hàng triệu bài hát chất lượng cao, playlist cá nhân hóa, và trải nghiệm nghe nhạc tuyệt vời nhất. 
+                        Bắt đầu hành trình âm nhạc của bạn ngay hôm nay.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="pages/home.html" class="btn btn--primary btn--large">
+                            <i class="fas fa-play"></i>
+                            Bắt đầu ngay
+                        </a>
+                        <button class="btn btn--ghost btn--large">
+                            <i class="fas fa-info-circle"></i>
+                            Tìm hiểu thêm
+                        </button>
+                    </div>
+                    <div class="hero__stats">
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">50M+</div>
+                            <div class="hero__stat-label">Bài hát</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">10M+</div>
+                            <div class="hero__stat-label">Người dùng</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">100K+</div>
+                            <div class="hero__stat-label">Nghệ sĩ</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__card">
+                        <div class="hero__card-header">
+                            <div class="hero__card-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="hero__card-content">
+                            <div class="hero__album-art">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="hero__track-info">
+                                <div class="hero__track-name">Đang phát</div>
+                                <div class="hero__track-artist">Nghệ sĩ yêu thích</div>
+                            </div>
+                            <div class="hero__player-controls">
+                                <button class="hero__control-btn">
+                                    <i class="fas fa-step-backward"></i>
+                                </button>
+                                <button class="hero__control-btn hero__control-btn--play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="hero__control-btn">
+                                    <i class="fas fa-step-forward"></i>
+                                </button>
+                            </div>
+                            <div class="hero__progress-bar">
+                                <div class="hero__progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-header__title">Tính năng nổi bật</h2>
+                <p class="section-header__subtitle">Trải nghiệm âm nhạc hoàn hảo với những công nghệ tiên tiến nhất</p>
+            </div>
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-headphones-alt"></i>
+                    </div>
+                    <h3 class="feature-card__title">Chất lượng cao</h3>
+                    <p class="feature-card__description">
+                        Nghe nhạc với chất lượng lossless, trải nghiệm âm thanh sống động như đang ở phòng thu.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-card__title">Mọi thiết bị</h3>
+                    <p class="feature-card__description">
+                        Đồng bộ playlist trên mọi thiết bị - điện thoại, máy tính, tablet. Nghe nhạc mọi lúc mọi nơi.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="feature-card__title">Cá nhân hóa</h3>
+                    <p class="feature-card__description">
+                        AI thông minh tạo playlist phù hợp với sở thích của bạn. Khám phá âm nhạc mới mỗi ngày.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3 class="feature-card__title">Tải xuống</h3>
+                    <p class="feature-card__description">
+                        Tải nhạc về để nghe offline, không cần kết nối internet. Tiết kiệm dữ liệu di động.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-card__title">Chia sẻ xã hội</h3>
+                    <p class="feature-card__description">
+                        Chia sẻ bài hát yêu thích với bạn bè, tạo playlist cộng tác và kết nối với cộng đồng.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3 class="feature-card__title">Phát trực tiếp</h3>
+                    <p class="feature-card__description">
+                        Nghe radio trực tiếp, podcast và các chương trình đặc biệt từ nghệ sĩ yêu thích.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-header__title">Cách hoạt động</h2>
+                <p class="section-header__subtitle">Bắt đầu chỉ trong 3 bước đơn giản</p>
+            </div>
+            <div class="how-it-works__steps">
+                <div class="step-card">
+                    <div class="step-card__number">01</div>
+                    <div class="step-card__icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="step-card__title">Tạo tài khoản</h3>
+                    <p class="step-card__description">
+                        Đăng ký miễn phí chỉ với email hoặc tài khoản mạng xã hội. Không cần thẻ tín dụng.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-card__number">02</div>
+                    <div class="step-card__icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="step-card__title">Chọn sở thích</h3>
+                    <p class="step-card__description">
+                        Cho chúng tôi biết thể loại nhạc bạn yêu thích để tạo trải nghiệm cá nhân hóa.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-card__number">03</div>
+                    <div class="step-card__icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h3 class="step-card__title">Bắt đầu nghe</h3>
+                    <p class="step-card__description">
+                        Khám phá hàng triệu bài hát và playlist được đề xuất dành riêng cho bạn.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-header__title">Người dùng nói gì</h2>
+                <p class="section-header__subtitle">Hàng triệu người đã tin tưởng và yêu thích MusicStream</p>
+            </div>
+            <div class="testimonials__grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                        "Trải nghiệm tuyệt vời! Chất lượng âm thanh cực kỳ tốt và giao diện rất đẹp. Tôi không thể sống thiếu MusicStream."
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-card__info">
+                            <div class="testimonial-card__name">Nguyễn Văn A</div>
+                            <div class="testimonial-card__role">Nhạc sĩ</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                        "Playlist được đề xuất rất hay, phù hợp với gu âm nhạc của tôi. Tính năng offline rất tiện lợi khi đi du lịch."
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-card__info">
+                            <div class="testimonial-card__name">Trần Thị B</div>
+                            <div class="testimonial-card__role">Sinh viên</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                        "Giao diện đẹp, dễ sử dụng. Tôi thích cách họ tổ chức playlist và khám phá nhạc mới. Đáng giá từng đồng!"
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-card__info">
+                            <div class="testimonial-card__name">Lê Văn C</div>
+                            <div class="testimonial-card__role">Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-header__title">Chọn gói phù hợp</h2>
+                <p class="section-header__subtitle">Bắt đầu miễn phí, nâng cấp khi bạn sẵn sàng</p>
+            </div>
+            <div class="pricing__grid">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">Free</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">0đ</span>
+                            <span class="pricing-card__period">/tháng</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fas fa-check"></i> Nghe nhạc có quảng cáo</li>
+                        <li><i class="fas fa-check"></i> Chất lượng âm thanh tiêu chuẩn</li>
+                        <li><i class="fas fa-check"></i> Phát nhạc ngẫu nhiên</li>
+                        <li><i class="fas fa-times"></i> Không tải xuống offline</li>
+                        <li><i class="fas fa-times"></i> Không bỏ qua bài hát</li>
+                    </ul>
+                    <a href="pages/home.html" class="btn btn--outline btn--full">Sử dụng miễn phí</a>
+                </div>
+
+                <!-- Premium Individual -->
+                <div class="pricing-card pricing-card--featured">
+                    <div class="pricing-card__badge">Phổ biến nhất</div>
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">Premium Individual</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__old-price">99.000đ</span>
+                            <span class="pricing-card__amount">49.000đ</span>
+                            <span class="pricing-card__period">/tháng</span>
+                        </div>
+                        <div class="pricing-card__discount">
+                            <i class="fas fa-tag"></i>
+                            Giảm 50% lần đầu
+                        </div>
+                        <div class="pricing-card__student-discount">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Sinh viên: <strong>29.000đ/tháng</strong> (giảm 70%)</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fas fa-check"></i> Không quảng cáo</li>
+                        <li><i class="fas fa-check"></i> Chất lượng âm thanh cao (320kbps)</li>
+                        <li><i class="fas fa-check"></i> Tải xuống offline không giới hạn</li>
+                        <li><i class="fas fa-check"></i> Bỏ qua bài hát không giới hạn</li>
+                        <li><i class="fas fa-check"></i> Phát nhạc theo yêu cầu</li>
+                        <li><i class="fas fa-check"></i> Hỗ trợ 1 thiết bị</li>
+                    </ul>
+                    <a href="pages/payment.html?plan=individual" class="btn btn--primary btn--full">Chọn gói này</a>
+                </div>
+
+                <!-- Premium Family -->
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">Premium Family</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__old-price">149.000đ</span>
+                            <span class="pricing-card__amount">74.500đ</span>
+                            <span class="pricing-card__period">/tháng</span>
+                        </div>
+                        <div class="pricing-card__discount">
+                            <i class="fas fa-tag"></i>
+                            Giảm 50% lần đầu
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fas fa-check"></i> Tất cả tính năng Premium Individual</li>
+                        <li><i class="fas fa-check"></i> Hỗ trợ tối đa 6 tài khoản</li>
+                        <li><i class="fas fa-check"></i> Playlist gia đình</li>
+                        <li><i class="fas fa-check"></i> Kiểm soát nội dung trẻ em</li>
+                        <li><i class="fas fa-check"></i> Chia sẻ với gia đình</li>
+                        <li><i class="fas fa-check"></i> Tiết kiệm hơn 40%</li>
+                    </ul>
+                    <a href="pages/payment.html?plan=family" class="btn btn--primary btn--full">Chọn gói này</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2 class="cta__title">Sẵn sàng bắt đầu hành trình âm nhạc?</h2>
+                <p class="cta__description">
+                    Tham gia cùng hàng triệu người dùng đang tận hưởng trải nghiệm nghe nhạc tuyệt vời nhất.
+                </p>
+                <div class="cta__actions">
+                    <a href="pages/home.html" class="btn btn--primary btn--large">
+                        <i class="fas fa-rocket"></i>
+                        Trải nghiệm ngay
+                    </a>
+                    <a href="pages/contact.html" class="btn btn--ghost btn--large">
+                        Liên hệ với chúng tôi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <i class="fas fa-music"></i>
+                        <span>MusicStream</span>
+                    </div>
+                    <p class="footer__description">
+                        Nền tảng nghe nhạc trực tuyến hàng đầu, mang đến trải nghiệm âm nhạc tuyệt vời nhất.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Sản phẩm</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Tính năng</a></li>
+                        <li><a href="#" class="footer__link">Gói dịch vụ</a></li>
+                        <li><a href="#" class="footer__link">Ứng dụng di động</a></li>
+                        <li><a href="#" class="footer__link">Trình phát web</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Công ty</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Về chúng tôi</a></li>
+                        <li><a href="#" class="footer__link">Blog</a></li>
+                        <li><a href="#" class="footer__link">Tuyển dụng</a></li>
+                        <li><a href="#" class="footer__link">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Hỗ trợ</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Trung tâm trợ giúp</a></li>
+                        <li><a href="#" class="footer__link">Câu hỏi thường gặp</a></li>
+                        <li><a href="#" class="footer__link">Điều khoản sử dụng</a></li>
+                        <li><a href="#" class="footer__link">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 MusicStream. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/subscription.js"></script>
+    <script src="js/subscription-notification.js"></script>
+    <script src="js/landing-auth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

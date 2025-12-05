@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Liên hệ với MusicStream - Chúng tôi luôn sẵn sàng hỗ trợ bạn">
+    <title>Liên hệ - MusicStream</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar__content">
+                <a href="../index.html" class="navbar__logo">
+                    <i class="fas fa-music"></i>
+                    <span>MusicStream</span>
+                </a>
+                <div class="navbar__actions">
+                    <a href="../index.html" class="btn btn--outline">Về trang chủ</a>
+                    <a href="home.html" class="btn btn--primary">Trải nghiệm ngay</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero__background">
+            <div class="contact-hero__gradient"></div>
+            <div class="contact-hero__particles" id="contactParticles"></div>
+        </div>
+        <div class="container">
+            <div class="contact-hero__content">
+                <h1 class="contact-hero__title">Hãy nói với chúng tôi</h1>
+                <p class="contact-hero__subtitle">
+                    Mọi ý kiến, câu hỏi hay đề xuất của bạn đều rất quan trọng. Hãy chia sẻ với chúng tôi!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main">
+        <div class="container">
+            <!-- Floating Contact Cards -->
+            <div class="contact-cards">
+                <div class="contact-card contact-card--email">
+                    <div class="contact-card__icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-card__title">Email</h3>
+                    <a href="mailto:support@musicstream.com" class="contact-card__link">support@musicstream.com</a>
+                    <p class="contact-card__description">Phản hồi trong 24h</p>
+                </div>
+
+                <div class="contact-card contact-card--phone">
+                    <div class="contact-card__icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-card__title">Hotline</h3>
+                    <a href="tel:+84123456789" class="contact-card__link">+84 123 456 789</a>
+                    <p class="contact-card__description">24/7 Support</p>
+                </div>
+
+                <div class="contact-card contact-card--location">
+                    <div class="contact-card__icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-card__title">Văn phòng</h3>
+                    <p class="contact-card__link">123 Đường ABC, Quận XYZ</p>
+                    <p class="contact-card__description">TP. Hồ Chí Minh</p>
+                </div>
+            </div>
+
+            <!-- Main Form Section -->
+            <div class="contact-form-section">
+                <div class="contact-form-visual">
+                    <div class="contact-form-visual__content">
+                        <div class="contact-form-visual__icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <h2 class="contact-form-visual__title">Gửi tin nhắn</h2>
+                        <p class="contact-form-visual__subtitle">
+                            Điền form bên dưới, chúng tôi sẽ phản hồi nhanh nhất có thể
+                        </p>
+                        <div class="contact-form-visual__features">
+                            <div class="contact-form-visual__feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Phản hồi trong 24h</span>
+                            </div>
+                            <div class="contact-form-visual__feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Bảo mật thông tin</span>
+                            </div>
+                            <div class="contact-form-visual__feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Hỗ trợ tận tình</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="contact-form__row">
+                            <div class="contact-form__group">
+                                <label for="firstName" class="contact-form__label">
+                                    <i class="fas fa-user"></i>
+                                    Họ
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    class="contact-form__input" 
+                                    placeholder="Nhập họ"
+                                    required
+                                >
+                            </div>
+                            <div class="contact-form__group">
+                                <label for="lastName" class="contact-form__label">
+                                    <i class="fas fa-user"></i>
+                                    Tên
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    class="contact-form__input" 
+                                    placeholder="Nhập tên"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="contact-form__group">
+                            <label for="email" class="contact-form__label">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="contact-form__input" 
+                                placeholder="your.email@example.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="contact-form__group">
+                            <label for="phone" class="contact-form__label">
+                                <i class="fas fa-phone"></i>
+                                Số điện thoại
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                class="contact-form__input" 
+                                placeholder="+84 xxx xxx xxx"
+                            >
+                        </div>
+
+                        <div class="contact-form__group">
+                            <label for="subject" class="contact-form__label">
+                                <i class="fas fa-tag"></i>
+                                Chủ đề
+                            </label>
+                            <select id="subject" name="subject" class="contact-form__input contact-form__select" required>
+                                <option value="">Chọn chủ đề</option>
+                                <option value="support">Hỗ trợ kỹ thuật</option>
+                                <option value="billing">Thanh toán & Gói dịch vụ</option>
+                                <option value="partnership">Hợp tác & Đối tác</option>
+                                <option value="feedback">Góp ý & Phản hồi</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+
+                        <div class="contact-form__group">
+                            <label for="message" class="contact-form__label">
+                                <i class="fas fa-comment-alt"></i>
+                                Tin nhắn
+                            </label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                class="contact-form__input contact-form__textarea" 
+                                rows="5"
+                                placeholder="Nhập tin nhắn của bạn..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="contact-form__group">
+                            <label class="contact-form__checkbox">
+                                <input type="checkbox" name="agree" id="agree" required>
+                                <span>Tôi đồng ý với <a href="#">Chính sách bảo mật</a></span>
+                            </label>
+                        </div>
+
+                        <div class="contact-form__error" id="contactError"></div>
+                        <div class="contact-form__success" id="contactSuccess"></div>
+
+                        <button type="submit" class="btn btn--primary btn--full btn--large contact-form__submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Gửi tin nhắn
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="contact-social">
+        <div class="container">
+            <h2 class="contact-social__title">Kết nối với chúng tôi</h2>
+            <div class="contact-social__links">
+                <a href="#" class="contact-social__link" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="contact-social__link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="contact-social__link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="contact-social__link" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="contact-social__link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <i class="fas fa-music"></i>
+                        <span>MusicStream</span>
+                    </div>
+                    <p class="footer__description">
+                        Nền tảng nghe nhạc trực tuyến hàng đầu, mang đến trải nghiệm âm nhạc tuyệt vời nhất.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Sản phẩm</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Tính năng</a></li>
+                        <li><a href="#" class="footer__link">Gói dịch vụ</a></li>
+                        <li><a href="#" class="footer__link">Ứng dụng di động</a></li>
+                        <li><a href="#" class="footer__link">Trình phát web</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Công ty</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Về chúng tôi</a></li>
+                        <li><a href="#" class="footer__link">Blog</a></li>
+                        <li><a href="#" class="footer__link">Tuyển dụng</a></li>
+                        <li><a href="contact.html" class="footer__link">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Hỗ trợ</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Trung tâm trợ giúp</a></li>
+                        <li><a href="#" class="footer__link">Câu hỏi thường gặp</a></li>
+                        <li><a href="#" class="footer__link">Điều khoản sử dụng</a></li>
+                        <li><a href="#" class="footer__link">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 MusicStream. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MusicStream - Bài hát đã phát gần đây">
+    <title>Gần đây - MusicStream</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/favorites.css">
+    <link rel="stylesheet" href="../css/subscription-notification.css">
+</head>
+<body class="home-page">
+    <!-- Components will be loaded here by components.js -->
+    <div id="topNavContainer"></div>
+    
+    <div class="home-layout">
+        <div id="sidebarContainer"></div>
+
+        <!-- Main Content -->
+        <main class="main-content favorites-page">
+            <div class="container">
+                <!-- Page Header -->
+                <div class="favorites-header">
+                    <div class="favorites-header__content">
+                        <div class="favorites-header__icon" style="background: linear-gradient(135deg, #00D2D3 0%, #5A4FCF 100%);">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="favorites-header__info">
+                            <h1 class="favorites-header__title">Gần đây</h1>
+                            <p class="favorites-header__subtitle" id="recentlyCount">0 bài hát</p>
+                        </div>
+                    </div>
+                    <div class="favorites-header__actions">
+                        <button class="btn btn--primary btn--large" id="playAllBtn">
+                            <i class="fas fa-play"></i>
+                            Phát tất cả
+                        </button>
+                        <button class="btn btn--outline" id="clearHistoryBtn" title="Xóa lịch sử">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Toolbar -->
+                <div class="favorites-toolbar">
+                    <div class="favorites-toolbar__search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="favorites-search" id="searchInput" placeholder="Tìm kiếm trong gần đây...">
+                    </div>
+                </div>
+
+                <!-- Songs List -->
+                <div class="favorites-list" id="recentlyList">
+                    <!-- Songs will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Player Bar -->
+    <div id="playerBarContainer"></div>
+
+    <!-- Scripts -->
+    <script src="../js/components.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/subscription.js"></script>
+    <script src="../js/subscription-notification.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/recently.js"></script>
+    
+    <!-- Initialize Layout -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Layout.init({ activePage: 'recently' });
+            
+            // Setup logout functionality
+            if (window.setupLogout) {
+                window.setupLogout();
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thanh toán Premium - MusicStream">
+    <title>Thanh toán - MusicStream</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/payment.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar__content">
+                <a href="../index.html" class="navbar__logo">
+                    <i class="fas fa-music"></i>
+                    <span>MusicStream</span>
+                </a>
+                <div class="navbar__actions">
+                    <div class="navbar__auth-actions" id="navbarAuthActions">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Page -->
+    <div class="payment-page">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="payment-steps">
+                <div class="payment-step payment-step--active">
+                    <div class="payment-step__number">1</div>
+                    <div class="payment-step__label">Chọn gói</div>
+                </div>
+                <div class="payment-step__line"></div>
+                <div class="payment-step payment-step--active">
+                    <div class="payment-step__number">2</div>
+                    <div class="payment-step__label">Thanh toán</div>
+                </div>
+                <div class="payment-step__line"></div>
+                <div class="payment-step">
+                    <div class="payment-step__number">3</div>
+                    <div class="payment-step__label">Hoàn tất</div>
+                </div>
+            </div>
+
+            <div class="payment-layout">
+                <!-- Left: Payment Form -->
+                <div class="payment-main">
+                    <div class="payment-section">
+                        <h2 class="payment-section__title">
+                            <i class="fas fa-credit-card"></i>
+                            Thông tin thanh toán
+                        </h2>
+                        
+                        <form class="payment-form" id="paymentForm">
+                            <!-- Payment Method Selection -->
+                            <div class="payment-form__group">
+                                <label class="payment-form__label">Phương thức thanh toán <span class="required">*</span></label>
+                                <div class="payment-methods-grid">
+                                    <label class="payment-method-card">
+                                        <input type="radio" name="paymentMethod" value="card" required>
+                                        <div class="payment-method-card__content">
+                                            <i class="fab fa-cc-visa"></i>
+                                            <span>Thẻ tín dụng/Ghi nợ</span>
+                                        </div>
+                                    </label>
+                                    <label class="payment-method-card">
+                                        <input type="radio" name="paymentMethod" value="wallet" required>
+                                        <div class="payment-method-card__content">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <span>Ví điện tử</span>
+                                        </div>
+                                    </label>
+                                    <label class="payment-method-card">
+                                        <input type="radio" name="paymentMethod" value="qr" required>
+                                        <div class="payment-method-card__content">
+                                            <i class="fas fa-qrcode"></i>
+                                            <span>QR Code</span>
+                                        </div>
+                                    </label>
+                                    <label class="payment-method-card">
+                                        <input type="radio" name="paymentMethod" value="sms" required>
+                                        <div class="payment-method-card__content">
+                                            <i class="fas fa-phone"></i>
+                                            <span>Thanh toán qua SMS</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Card Details (shown when card is selected) -->
+                            <div class="payment-form__group" id="cardDetailsGroup" style="display: none;">
+                                <label class="payment-form__label">Thông tin thẻ</label>
+                                <div class="payment-form__row">
+                                    <div class="payment-form__col">
+                                        <input 
+                                            type="text" 
+                                            class="payment-form__input" 
+                                            placeholder="Số thẻ"
+                                            maxlength="19"
+                                            id="cardNumber"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="payment-form__row">
+                                    <div class="payment-form__col">
+                                        <input 
+                                            type="text" 
+                                            class="payment-form__input" 
+                                            placeholder="Tên chủ thẻ"
+                                            id="cardName"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="payment-form__row">
+                                    <div class="payment-form__col">
+                                        <input 
+                                            type="text" 
+                                            class="payment-form__input" 
+                                            placeholder="MM/YY"
+                                            maxlength="5"
+                                            id="cardExpiry"
+                                        >
+                                    </div>
+                                    <div class="payment-form__col">
+                                        <input 
+                                            type="text" 
+                                            class="payment-form__input" 
+                                            placeholder="CVV"
+                                            maxlength="3"
+                                            id="cardCVV"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Wallet Details (shown when wallet is selected) -->
+                            <div class="payment-form__group" id="walletDetailsGroup" style="display: none;">
+                                <label class="payment-form__label">Chọn ví điện tử</label>
+                                <select class="payment-form__select" id="walletType">
+                                    <option value="">Chọn ví điện tử</option>
+                                    <option value="momo">MoMo</option>
+                                    <option value="zalopay">ZaloPay</option>
+                                    <option value="vnpay">VNPay</option>
+                                </select>
+                                <input 
+                                    type="text" 
+                                    class="payment-form__input" 
+                                    placeholder="Số điện thoại"
+                                    id="walletPhone"
+                                    style="margin-top: var(--spacing-sm);"
+                                >
+                            </div>
+
+                            <!-- SMS Details (shown when SMS is selected) -->
+                            <div class="payment-form__group" id="smsDetailsGroup" style="display: none;">
+                                <label class="payment-form__label">Số điện thoại</label>
+                                <input 
+                                    type="tel" 
+                                    class="payment-form__input" 
+                                    placeholder="Nhập số điện thoại"
+                                    id="smsPhone"
+                                >
+                                <small class="payment-form__hint">Thanh toán sẽ được trừ vào tài khoản điện thoại của bạn</small>
+                            </div>
+
+                            <!-- QR Code (shown when QR is selected) -->
+                            <div class="payment-form__group" id="qrDetailsGroup" style="display: none;">
+                                <label class="payment-form__label">Quét mã QR để thanh toán</label>
+                                <div class="qr-code-placeholder">
+                                    <i class="fas fa-qrcode"></i>
+                                    <p>Mã QR sẽ được hiển thị sau khi bạn xác nhận</p>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="payment-form__group">
+                                <label class="payment-form__checkbox">
+                                    <input type="checkbox" id="agreeTerms" required>
+                                    <span>Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách bảo mật</a></span>
+                                </label>
+                            </div>
+
+                            <div class="payment-form__message" id="formMessage"></div>
+
+                            <button type="submit" class="btn btn--primary btn--full btn--large" id="submitBtn">
+                                <i class="fas fa-lock"></i>
+                                Xác nhận thanh toán
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right: Order Summary -->
+                <div class="payment-sidebar">
+                    <div class="order-summary">
+                        <h3 class="order-summary__title">
+                            <i class="fas fa-receipt"></i>
+                            Tóm tắt đơn hàng
+                        </h3>
+                        
+                        <div class="order-summary__plan" id="selectedPlanSummary">
+                            <div class="order-summary__plan-name" id="planName">Premium Individual</div>
+                            <div class="order-summary__plan-period" id="planPeriod">Thanh toán hàng tháng</div>
+                        </div>
+
+                        <div class="order-summary__details">
+                            <div class="order-summary__row">
+                                <span>Giá gốc:</span>
+                                <span id="originalPrice">99.000đ</span>
+                            </div>
+                            <div class="order-summary__row order-summary__row--discount">
+                                <span>Giảm giá:</span>
+                                <span id="discountAmount">-50.000đ (50%)</span>
+                            </div>
+                            <div class="order-summary__divider"></div>
+                            <div class="order-summary__row order-summary__row--total">
+                                <span>Tổng thanh toán:</span>
+                                <span id="totalPrice">49.000đ</span>
+                            </div>
+                        </div>
+
+                        <div class="order-summary__features">
+                            <h4 class="order-summary__features-title">Bạn sẽ nhận được:</h4>
+                            <ul class="order-summary__features-list" id="planFeatures">
+                                <li><i class="fas fa-check"></i> Không quảng cáo</li>
+                                <li><i class="fas fa-check"></i> Chất lượng âm thanh cao</li>
+                                <li><i class="fas fa-check"></i> Tải xuống offline</li>
+                                <li><i class="fas fa-check"></i> Phát nhạc không giới hạn</li>
+                            </ul>
+                        </div>
+
+                        <div class="order-summary__security">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Thanh toán được bảo mật và mã hóa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/landing-auth.js"></script>
+    <script src="../js/subscription.js"></script>
+    <script src="../js/payment.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
+

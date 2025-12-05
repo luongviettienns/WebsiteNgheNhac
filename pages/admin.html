@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang quản trị MusicStream">
+    <title>Trang quản trị - MusicStream</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body class="admin-page">
+    <!-- Main Content -->
+    <main class="admin-content">
+            <div class="main-content__header">
+                <h1 class="main-content__title">
+                    <i class="fas fa-cog"></i>
+                    Trang quản trị
+                </h1>
+                <p class="main-content__subtitle">Quản lý hệ thống MusicStream</p>
+            </div>
+
+            <!-- Admin Tabs -->
+            <div class="admin-tabs">
+                <div class="admin-tabs__nav">
+                    <button class="admin-tabs__btn admin-tabs__btn--active" data-tab="songs">
+                        <i class="fas fa-music"></i>
+                        <span>Quản lý bài hát</span>
+                    </button>
+                    <button class="admin-tabs__btn" data-tab="plans">
+                        <i class="fas fa-crown"></i>
+                        <span>Quản lý gói Premium</span>
+                    </button>
+                    <button class="admin-tabs__btn" data-tab="users">
+                        <i class="fas fa-users"></i>
+                        <span>Quản lý tài khoản</span>
+                    </button>
+                    <button class="admin-tabs__btn" data-tab="albums">
+                        <i class="fas fa-compact-disc"></i>
+                        <span>Quản lý Album</span>
+                    </button>
+                </div>
+
+                <!-- Tab Content: Songs -->
+                <div class="admin-tabs__content admin-tabs__content--active" data-tab-content="songs">
+                    <!-- Add Song Form -->
+                    <section class="admin-section">
+                <div class="admin-card">
+                    <div class="admin-card__header">
+                        <h2 class="admin-card__title">
+                            <i class="fas fa-plus-circle"></i>
+                            Thêm bài hát mới
+                        </h2>
+                    </div>
+                    <form class="admin-form" id="addSongForm">
+                        <div class="admin-form__row">
+                            <div class="admin-form__group">
+                                <label for="songTitle" class="admin-form__label">
+                                    <i class="fas fa-music"></i>
+                                    Tên bài hát <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="songTitle" 
+                                    name="title" 
+                                    class="admin-form__input" 
+                                    placeholder="Nhập tên bài hát"
+                                    required
+                                >
+                            </div>
+                            <div class="admin-form__group">
+                                <label for="songArtist" class="admin-form__label">
+                                    <i class="fas fa-user"></i>
+                                    Nghệ sĩ <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="songArtist" 
+                                    name="artist" 
+                                    class="admin-form__input" 
+                                    placeholder="Nhập tên nghệ sĩ"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="admin-form__row">
+                            <div class="admin-form__group">
+                                <label for="songAudio" class="admin-form__label">
+                                    <i class="fas fa-file-audio"></i>
+                                    Đường dẫn Audio <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="songAudio" 
+                                    name="audio" 
+                                    class="admin-form__input" 
+                                    placeholder="../assets/audio/song.mp3"
+                                    required
+                                >
+                                <small class="admin-form__hint">Ví dụ: ../assets/audio/baihat.mp3</small>
+                            </div>
+                            <div class="admin-form__group">
+                                <label for="songImage" class="admin-form__label">
+                                    <i class="fas fa-image"></i>
+                                    Đường dẫn Ảnh <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="songImage" 
+                                    name="image" 
+                                    class="admin-form__input" 
+                                    placeholder="../assets/images/song.jpg"
+                                    required
+                                >
+                                <small class="admin-form__hint">Ví dụ: ../assets/images/baihat.jpg</small>
+                            </div>
+                        </div>
+
+                        <div class="admin-form__row">
+                            <div class="admin-form__group">
+                                <label for="songAlbum" class="admin-form__label">
+                                    <i class="fas fa-compact-disc"></i>
+                                    Album
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="songAlbum" 
+                                    name="album" 
+                                    class="admin-form__input" 
+                                    placeholder="Tên album (tùy chọn)"
+                                >
+                            </div>
+                            <div class="admin-form__group">
+                                <label for="songDuration" class="admin-form__label">
+                                    <i class="fas fa-clock"></i>
+                                    Thời lượng
+                                </label>
+                                <div class="admin-form__duration-wrapper">
+                                    <input 
+                                        type="number" 
+                                        id="songDuration" 
+                                        name="duration" 
+                                        class="admin-form__input" 
+                                        placeholder="Tự động nhận biết"
+                                        min="1"
+                                        readonly
+                                    >
+                                    <button type="button" class="admin-form__duration-btn" id="getDurationBtn" title="Lấy thời lượng từ file audio">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                </div>
+                                <small class="admin-form__hint" id="durationHint">Hệ thống sẽ tự động nhận biết thời lượng từ file audio</small>
+                                <input type="hidden" id="songDurationHidden" name="duration">
+                            </div>
+                        </div>
+
+                        <div class="admin-form__row">
+                            <div class="admin-form__group">
+                                <label for="songArtistImage" class="admin-form__label">
+                                    <i class="fas fa-user-circle"></i>
+                                    Ảnh nghệ sĩ
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="songArtistImage" 
+                                    name="artistImage" 
+                                    class="admin-form__input" 
+                                    placeholder="../assets/images/artist.jpg"
+                                >
+                                <small class="admin-form__hint">Ảnh đại diện của nghệ sĩ (tùy chọn)</small>
+                            </div>
+                        </div>
+
+                        <div class="admin-form__actions">
+                            <button type="submit" class="btn btn--primary btn--large">
+                                <i class="fas fa-plus"></i>
+                                Thêm bài hát
+                            </button>
+                            <button type="reset" class="btn btn--secondary btn--large">
+                                <i class="fas fa-redo"></i>
+                                Làm mới
+                            </button>
+                        </div>
+
+                        <div class="admin-form__message" id="formMessage"></div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Songs List -->
+            <section class="admin-section">
+                <div class="admin-card">
+                    <div class="admin-card__header">
+                        <h2 class="admin-card__title">
+                            <i class="fas fa-list"></i>
+                            Danh sách bài hát đã thêm
+                            <span class="admin-card__count" id="songsCount">(0)</span>
+                        </h2>
+                    </div>
+                    <div class="admin-songs-list" id="songsList">
+                        <!-- Songs will be loaded here -->
+                    </div>
+                </div>
+            </section>
+                </div>
+
+                <!-- Tab Content: Plans -->
+                <div class="admin-tabs__content" data-tab-content="plans">
+                    <!-- Manage Plans Section -->
+                    <section class="admin-section">
+                <div class="admin-card">
+                    <div class="admin-card__header">
+                        <h2 class="admin-card__title">
+                            <i class="fas fa-crown"></i>
+                            Quản lý gói Premium
+                        </h2>
+                    </div>
+                    <form class="admin-form" id="planForm">
+                        <div class="admin-form__row">
+                            <div class="admin-form__group">
+                                <label for="planName" class="admin-form__label">
+                                    <i class="fas fa-tag"></i>
+                                    Tên gói <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="planName" 
+                                    name="name" 
+                                    class="admin-form__input" 
+                                    placeholder="Ví dụ: Premium Individual"
+                                    required
+                                >
+                            </div>
+                            <div class="admin-form__group">
+                                <label for="planType" class="admin-form__label">
+                                    <i class="fas fa-code"></i>
+                                    Mã gói (type) <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="planType" 
+                                    name="type" 
+                                    class="admin-form__input" 
+                                    placeholder="Ví dụ: individual, family"
+                                    required
+                                >
+                                <small class="admin-form__hint">Mã định danh duy nhất cho gói (không dấu, không khoảng trắng)</small>
+                            </div>
+                        </div>
+
+                        <div class="admin-form__row">
+                            <div class="admin-form__group">
+                                <label for="planOriginalPrice" class="admin-form__label">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    Giá gốc (VNĐ) <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="planOriginalPrice" 
+                                    name="originalPrice" 
+                                    class="admin-form__input" 
+                                    placeholder="99000"
+                                    min="0"
+                                    required
+                                >
+                            </div>
+                            <div class="admin-form__group">
+                                <label for="planDiscountPrice" class="admin-form__label">
+                                    <i class="fas fa-percent"></i>
+                                    Giá sau giảm (VNĐ) <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="planDiscountPrice" 
+                                    name="discountPrice" 
+                                    class="admin-form__input" 
+                                    placeholder="49000"
+                                    min="0"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="admin-form__row">
+                            <div class="admin-form__group">
+                                <label for="planDiscount" class="admin-form__label">
+                                    <i class="fas fa-tag"></i>
+                                    Phần trăm giảm giá (%)
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="planDiscount" 
+                                    name="discount" 
+                                    class="admin-form__input" 
+                                    placeholder="50"
+                                    min="0"
+                                    max="100"
+                                >
+                            </div>
+                            <div class="admin-form__group">
+                                <label for="planPeriod" class="admin-form__label">
+                                    <i class="fas fa-calendar"></i>
+                                    Chu kỳ thanh toán <span class="required">*</span>
+                                </label>
+                                <select id="planPeriod" name="period" class="admin-form__input" required>
+                                    <option value="tháng">Tháng</option>
+                                    <option value="năm">Năm</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="admin-form__row">
+                            <div class="admin-form__group admin-form__group--full">
+                                <label for="planFeatures" class="admin-form__label">
+                                    <i class="fas fa-list-check"></i>
+                                    Tính năng (mỗi tính năng một dòng) <span class="required">*</span>
+                                </label>
+                                <textarea 
+                                    id="planFeatures" 
+                                    name="features" 
+                                    class="admin-form__input admin-form__input--textarea" 
+                                    rows="5"
+                                    placeholder="Không quảng cáo&#10;Chất lượng âm thanh cao (320kbps)&#10;Tải xuống offline không giới hạn"
+                                    required
+                                ></textarea>
+                                <small class="admin-form__hint">Mỗi tính năng trên một dòng</small>
+                            </div>
+                        </div>
+
+                        <div class="admin-form__row">
+                            <div class="admin-form__group">
+                                <label for="planStudentPrice" class="admin-form__label">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Giá sinh viên (VNĐ)
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="planStudentPrice" 
+                                    name="studentPrice" 
+                                    class="admin-form__input" 
+                                    placeholder="29000"
+                                    min="0"
+                                >
+                                <small class="admin-form__hint">Để trống nếu không có giảm giá sinh viên</small>
+                            </div>
+                            <div class="admin-form__group">
+                                <label class="admin-form__label">
+                                    <i class="fas fa-toggle-on"></i>
+                                    Trạng thái
+                                </label>
+                                <div class="admin-form__checkbox-group">
+                                    <label class="admin-form__checkbox">
+                                        <input type="checkbox" id="planIsActive" name="isActive" checked>
+                                        <span>Hiển thị gói này</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-form__actions">
+                            <button type="submit" class="btn btn--primary btn--large" id="planSubmitBtn">
+                                <i class="fas fa-plus"></i>
+                                Thêm gói
+                            </button>
+                            <button type="button" class="btn btn--secondary btn--large" id="planCancelBtn" style="display: none;">
+                                <i class="fas fa-times"></i>
+                                Hủy
+                            </button>
+                            <button type="reset" class="btn btn--secondary btn--large">
+                                <i class="fas fa-redo"></i>
+                                Làm mới
+                            </button>
+                        </div>
+
+                        <div class="admin-form__message" id="planFormMessage"></div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Plans List -->
+            <section class="admin-section">
+                <div class="admin-card">
+                    <div class="admin-card__header">
+                        <h2 class="admin-card__title">
+                            <i class="fas fa-list"></i>
+                            Danh sách gói Premium
+                            <span class="admin-card__count" id="plansCount">(0)</span>
+                        </h2>
+                    </div>
+                    <div class="admin-plans-list" id="plansList">
+                        <!-- Plans will be loaded here -->
+                    </div>
+                </div>
+            </section>
+                </div>
+
+                <!-- Tab Content: Users -->
+                <div class="admin-tabs__content" data-tab-content="users">
+                    <!-- Users List -->
+                    <section class="admin-section">
+                        <div class="admin-card">
+                            <div class="admin-card__header">
+                                <h2 class="admin-card__title">
+                                    <i class="fas fa-users"></i>
+                                    Danh sách tài khoản người dùng
+                                    <span class="admin-card__count" id="usersCount">(0)</span>
+                                </h2>
+                            </div>
+                            <div class="admin-users-list" id="usersList">
+                                <!-- Users will be loaded here -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tab Content: Albums -->
+                <div class="admin-tabs__content" data-tab-content="albums">
+                    <!-- Add Album Form -->
+                    <section class="admin-section">
+                        <div class="admin-card">
+                            <div class="admin-card__header">
+                                <h2 class="admin-card__title">
+                                    <i class="fas fa-plus-circle"></i>
+                                    Tạo album mới
+                                </h2>
+                            </div>
+                            <form class="admin-form" id="albumForm">
+                                <div class="admin-form__row">
+                                    <div class="admin-form__group">
+                                        <label for="albumName" class="admin-form__label">
+                                            <i class="fas fa-compact-disc"></i>
+                                            Tên album <span class="required">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="albumName" 
+                                            name="name" 
+                                            class="admin-form__input" 
+                                            placeholder="Nhập tên album"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="admin-form__group">
+                                        <label for="albumArtist" class="admin-form__label">
+                                            <i class="fas fa-user"></i>
+                                            Nghệ sĩ <span class="required">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="albumArtist" 
+                                            name="artist" 
+                                            class="admin-form__input" 
+                                            placeholder="Nhập tên nghệ sĩ"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="admin-form__row">
+                                    <div class="admin-form__group">
+                                        <label for="albumImage" class="admin-form__label">
+                                            <i class="fas fa-image"></i>
+                                            Đường dẫn Ảnh bìa <span class="required">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="albumImage" 
+                                            name="image" 
+                                            class="admin-form__input" 
+                                            placeholder="../assets/images/album.jpg"
+                                            required
+                                        >
+                                        <small class="admin-form__hint">Ví dụ: ../assets/images/album.jpg</small>
+                                    </div>
+                                    <div class="admin-form__group">
+                                        <label for="albumYear" class="admin-form__label">
+                                            <i class="fas fa-calendar"></i>
+                                            Năm phát hành
+                                        </label>
+                                        <input 
+                                            type="number" 
+                                            id="albumYear" 
+                                            name="year" 
+                                            class="admin-form__input" 
+                                            placeholder="2024"
+                                            min="1900"
+                                            max="2100"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="admin-form__row">
+                                    <div class="admin-form__group admin-form__group--full">
+                                        <label for="albumDescription" class="admin-form__label">
+                                            <i class="fas fa-align-left"></i>
+                                            Mô tả
+                                        </label>
+                                        <textarea 
+                                            id="albumDescription" 
+                                            name="description" 
+                                            class="admin-form__input admin-form__input--textarea" 
+                                            rows="3"
+                                            placeholder="Mô tả về album (tùy chọn)"
+                                        ></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="admin-form__actions">
+                                    <button type="submit" class="btn btn--primary btn--large" id="albumSubmitBtn">
+                                        <i class="fas fa-plus"></i>
+                                        Tạo album
+                                    </button>
+                                    <button type="reset" class="btn btn--secondary btn--large">
+                                        <i class="fas fa-redo"></i>
+                                        Làm mới
+                                    </button>
+                                </div>
+
+                                <div class="admin-form__message" id="albumFormMessage"></div>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- Albums List -->
+                    <section class="admin-section">
+                        <div class="admin-card">
+                            <div class="admin-card__header">
+                                <h2 class="admin-card__title">
+                                    <i class="fas fa-list"></i>
+                                    Danh sách Album
+                                    <span class="admin-card__count" id="albumsCount">(0)</span>
+                                </h2>
+                            </div>
+                            <div class="admin-albums-list" id="albumsList">
+                                <!-- Albums will be loaded here -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin.js"></script>
+    
+    <!-- Initialize Admin Page -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if user is admin
+            const currentUser = window.authUtils ? window.authUtils.getCurrentUser() : null;
+            const isAdmin = currentUser && currentUser.username === 'admin';
+            
+            if (!isAdmin) {
+                // Verify admin account
+                const accounts = JSON.parse(localStorage.getItem('musicstream_accounts') || '[]');
+                const adminAccount = accounts.find(acc => acc.username === 'admin' && acc.password === 'admin123');
+                
+                if (!adminAccount) {
+                    // Redirect to home if not admin
+                    window.location.href = 'home.html';
+                    return;
+                }
+            }
+            
+            // Initialize admin page
+            if (window.AdminPage) {
+                window.AdminPage.init();
+            }
+        });
+    </script>
+</body>
+</html>
+

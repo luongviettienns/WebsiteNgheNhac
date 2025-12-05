@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thanh toán thành công - MusicStream">
+    <title>Thanh toán thành công - MusicStream</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/payment.css">
+    <link rel="stylesheet" href="../css/payment-success.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar__content">
+                <a href="../index.html" class="navbar__logo">
+                    <i class="fas fa-music"></i>
+                    <span>MusicStream</span>
+                </a>
+                <div class="navbar__actions">
+                    <div class="navbar__auth-actions" id="navbarAuthActions">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Success Page -->
+    <div class="payment-success-page">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="payment-steps">
+                <div class="payment-step payment-step--completed">
+                    <div class="payment-step__number">1</div>
+                    <div class="payment-step__label">Chọn gói</div>
+                </div>
+                <div class="payment-step__line payment-step__line--completed"></div>
+                <div class="payment-step payment-step--completed">
+                    <div class="payment-step__number">2</div>
+                    <div class="payment-step__label">Thanh toán</div>
+                </div>
+                <div class="payment-step__line payment-step__line--completed"></div>
+                <div class="payment-step payment-step--active">
+                    <div class="payment-step__number">3</div>
+                    <div class="payment-step__label">Hoàn tất</div>
+                </div>
+            </div>
+
+            <!-- Success Content -->
+            <div class="payment-success-content">
+                <!-- Success Icon -->
+                <div class="payment-success__icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+
+                <!-- Success Message -->
+                <h1 class="payment-success__title">Thanh toán thành công!</h1>
+                <p class="payment-success__message">Cảm ơn bạn đã nâng cấp lên Premium. Bạn có thể bắt đầu sử dụng ngay bây giờ.</p>
+
+                <!-- Payment Details Card -->
+                <div class="payment-success-card">
+                    <div class="payment-success-card__header">
+                        <h2 class="payment-success-card__title">
+                            <i class="fas fa-receipt"></i>
+                            Thông tin thanh toán
+                        </h2>
+                    </div>
+
+                    <div class="payment-success-card__body">
+                        <!-- Plan Information -->
+                        <div class="payment-info-section">
+                            <h3 class="payment-info-section__title">Gói đã mua</h3>
+                            <div class="payment-info-item">
+                                <span class="payment-info-item__label">Gói Premium:</span>
+                                <span class="payment-info-item__value" id="planName">Premium Individual</span>
+                            </div>
+                            <div class="payment-info-item">
+                                <span class="payment-info-item__label">Chu kỳ:</span>
+                                <span class="payment-info-item__value" id="planPeriod">Hàng tháng</span>
+                            </div>
+                            <div class="payment-info-item">
+                                <span class="payment-info-item__label">Số tiền:</span>
+                                <span class="payment-info-item__value payment-info-item__value--highlight" id="planPrice">49.000đ</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-info-divider"></div>
+
+                        <!-- Payment Information -->
+                        <div class="payment-info-section">
+                            <h3 class="payment-info-section__title">Thông tin thanh toán</h3>
+                            <div class="payment-info-item">
+                                <span class="payment-info-item__label">Phương thức:</span>
+                                <span class="payment-info-item__value" id="paymentMethod">Thẻ tín dụng/Ghi nợ</span>
+                            </div>
+                            <div class="payment-info-item">
+                                <span class="payment-info-item__label">Mã giao dịch:</span>
+                                <span class="payment-info-item__value" id="transactionId">-</span>
+                            </div>
+                            <div class="payment-info-item">
+                                <span class="payment-info-item__label">Ngày thanh toán:</span>
+                                <span class="payment-info-item__value" id="paymentDate">-</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-info-divider"></div>
+
+                        <!-- Subscription Information -->
+                        <div class="payment-info-section">
+                            <h3 class="payment-info-section__title">Thông tin đăng ký</h3>
+                            <div class="payment-info-item">
+                                <span class="payment-info-item__label">Ngày bắt đầu:</span>
+                                <span class="payment-info-item__value" id="startDate">-</span>
+                            </div>
+                            <div class="payment-info-item">
+                                <span class="payment-info-item__label">Ngày hết hạn:</span>
+                                <span class="payment-info-item__value payment-info-item__value--expiry" id="expiryDate">-</span>
+                            </div>
+                            <div class="payment-info-item">
+                                <span class="payment-info-item__label">Trạng thái:</span>
+                                <span class="payment-info-item__value payment-info-item__value--active">
+                                    <i class="fas fa-check-circle"></i>
+                                    Đang hoạt động
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="payment-success__actions">
+                    <a href="../pages/home.html" class="btn btn--primary btn--large">
+                        <i class="fas fa-home"></i>
+                        Về trang chủ
+                    </a>
+                    <a href="../pages/premium.html" class="btn btn--outline btn--large">
+                        <i class="fas fa-info-circle"></i>
+                        Xem chi tiết gói
+                    </a>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="payment-success__info">
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        Thông tin chi tiết đã được gửi đến email của bạn.
+                    </p>
+                    <p>
+                        <i class="fas fa-question-circle"></i>
+                        Cần hỗ trợ? <a href="../pages/contact.html">Liên hệ với chúng tôi</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/landing-auth.js"></script>
+    <script src="../js/subscription.js"></script>
+    <script src="../js/payment-success.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
+

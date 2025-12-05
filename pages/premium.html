@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nâng cấp lên Premium - MusicStream">
+    <title>Premium - MusicStream</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/premium.css">
+    <link rel="stylesheet" href="../css/subscription-notification.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar__content">
+                <a href="../index.html" class="navbar__logo">
+                    <i class="fas fa-music"></i>
+                    <span>MusicStream</span>
+                </a>
+                <div class="navbar__actions">
+                    <div class="navbar__auth-actions" id="navbarAuthActions">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Premium Hero Section -->
+    <section class="premium-hero">
+        <div class="container">
+            <div class="premium-hero__content">
+                <div class="premium-hero__badge">
+                    <i class="fas fa-star"></i>
+                    <span>Nâng cấp Premium</span>
+                </div>
+                <h1 class="premium-hero__title">
+                    Trải nghiệm âm nhạc <span class="gradient-text">không giới hạn</span>
+                </h1>
+                <p class="premium-hero__description">
+                    Bỏ qua quảng cáo, nghe nhạc chất lượng cao, tải xuống offline và nhiều tính năng độc quyền khác
+                </p>
+                <div class="premium-hero__discount">
+                    <i class="fas fa-gift"></i>
+                    <span>Giảm <strong>50%</strong> cho lần đầu đăng ký!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-header__title">Chọn gói phù hợp với bạn</h2>
+                <p class="section-header__subtitle">So sánh các gói Premium và chọn gói tốt nhất</p>
+            </div>
+
+            <div class="pricing__grid">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">Free</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">0đ</span>
+                            <span class="pricing-card__period">/tháng</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fas fa-check"></i> Nghe nhạc có quảng cáo</li>
+                        <li><i class="fas fa-check"></i> Chất lượng âm thanh tiêu chuẩn</li>
+                        <li><i class="fas fa-check"></i> Phát nhạc ngẫu nhiên</li>
+                        <li><i class="fas fa-times"></i> Không tải xuống offline</li>
+                        <li><i class="fas fa-times"></i> Không bỏ qua bài hát</li>
+                    </ul>
+                    <a href="../pages/home.html" class="btn btn--outline btn--full">Sử dụng miễn phí</a>
+                </div>
+
+                <!-- Premium Individual -->
+                <div class="pricing-card pricing-card--featured">
+                    <div class="pricing-card__badge">Phổ biến nhất</div>
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">Premium Individual</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__old-price">99.000đ</span>
+                            <span class="pricing-card__amount">49.000đ</span>
+                            <span class="pricing-card__period">/tháng</span>
+                        </div>
+                        <div class="pricing-card__discount">
+                            <i class="fas fa-tag"></i>
+                            Giảm 50% lần đầu
+                        </div>
+                        <div class="pricing-card__student-discount">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Sinh viên: <strong>29.000đ/tháng</strong> (giảm 70%)</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fas fa-check"></i> Không quảng cáo</li>
+                        <li><i class="fas fa-check"></i> Chất lượng âm thanh cao (320kbps)</li>
+                        <li><i class="fas fa-check"></i> Tải xuống offline không giới hạn</li>
+                        <li><i class="fas fa-check"></i> Bỏ qua bài hát không giới hạn</li>
+                        <li><i class="fas fa-check"></i> Phát nhạc theo yêu cầu</li>
+                        <li><i class="fas fa-check"></i> Hỗ trợ 1 thiết bị</li>
+                    </ul>
+                    <a href="payment.html?plan=individual" class="btn btn--primary btn--full" data-plan="individual">Chọn gói này</a>
+                </div>
+
+                <!-- Premium Family -->
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">Premium Family</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__old-price">149.000đ</span>
+                            <span class="pricing-card__amount">74.500đ</span>
+                            <span class="pricing-card__period">/tháng</span>
+                        </div>
+                        <div class="pricing-card__discount">
+                            <i class="fas fa-tag"></i>
+                            Giảm 50% lần đầu
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fas fa-check"></i> Tất cả tính năng Premium Individual</li>
+                        <li><i class="fas fa-check"></i> Hỗ trợ tối đa 6 tài khoản</li>
+                        <li><i class="fas fa-check"></i> Playlist gia đình</li>
+                        <li><i class="fas fa-check"></i> Kiểm soát nội dung trẻ em</li>
+                        <li><i class="fas fa-check"></i> Chia sẻ với gia đình</li>
+                        <li><i class="fas fa-check"></i> Tiết kiệm hơn 40%</li>
+                    </ul>
+                    <a href="payment.html?plan=family" class="btn btn--primary btn--full" data-plan="family">Chọn gói này</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-header__title">Phương thức thanh toán</h2>
+                <p class="section-header__subtitle">Chọn phương thức thanh toán phù hợp với bạn</p>
+            </div>
+
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <div class="payment-method__icon">
+                        <i class="fab fa-cc-visa"></i>
+                    </div>
+                    <h3 class="payment-method__name">Thẻ tín dụng/Ghi nợ</h3>
+                    <p class="payment-method__description">Visa, Mastercard, JCB</p>
+                </div>
+
+                <div class="payment-method">
+                    <div class="payment-method__icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="payment-method__name">Ví điện tử</h3>
+                    <p class="payment-method__description">MoMo, ZaloPay, VNPay</p>
+                </div>
+
+                <div class="payment-method">
+                    <div class="payment-method__icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3 class="payment-method__name">QR Code</h3>
+                    <p class="payment-method__description">Quét mã để thanh toán</p>
+                </div>
+
+                <div class="payment-method">
+                    <div class="payment-method__icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="payment-method__name">Thanh toán qua SMS</h3>
+                    <p class="payment-method__description">Thanh toán qua nhà mạng</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/landing-auth.js"></script>
+    <script src="../js/subscription.js"></script>
+    <script src="../js/subscription-notification.js"></script>
+    <script src="../js/premium.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,362 @@
+/* ============================================
+   EXPLORE PAGE STYLES
+   Thiết kế đồng nhất với hệ thống
+   ============================================ */
+
+/* ============================================
+   EXPLORE HEADER
+   ============================================ */
+
+.explore-header {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg) 0;
+}
+
+.explore-header__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.explore-header__subtitle {
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+}
+
+.section-header__title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.section-header__view-all {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition-base);
+    font-weight: 600;
+}
+
+.section-header__view-all:hover {
+    color: var(--color-primary);
+}
+
+/* ============================================
+   EXPLORE SECTION
+   ============================================ */
+
+.explore-section {
+    margin-bottom: var(--spacing-xxl);
+}
+
+/* ============================================
+   GENRES GRID
+   ============================================ */
+
+.genres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.genre-card {
+    position: relative;
+    height: 200px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform var(--transition-base);
+    background: var(--gradient-primary);
+}
+
+.genre-card:hover {
+    transform: translateY(-4px);
+}
+
+.genre-card__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    transition: opacity var(--transition-base);
+}
+
+.genre-card:hover .genre-card__image {
+    opacity: 0.8;
+}
+
+.genre-card__content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--spacing-md);
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.genre-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.genre-card__count {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+/* ============================================
+   MOODS GRID
+   ============================================ */
+
+.moods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.mood-card {
+    position: relative;
+    height: 150px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    background: var(--color-bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mood-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(108, 92, 231, 0.3);
+}
+
+.mood-card__icon {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+    opacity: 0.8;
+}
+
+.mood-card__content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-md);
+}
+
+.mood-card__title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+/* ============================================
+   CHARTS LIST
+   ============================================ */
+
+.charts-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.chart-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.chart-item:hover {
+    background: var(--color-bg-tertiary);
+    border-color: var(--color-primary);
+    transform: translateX(4px);
+}
+
+.chart-item__rank {
+    font-size: var(--font-size-2xl);
+    font-weight: 900;
+    color: var(--color-text-tertiary);
+    min-width: 50px;
+    text-align: center;
+}
+
+.chart-item__rank--top {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.chart-item__image {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+    background: var(--gradient-primary);
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.chart-item__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.chart-item__title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chart-item__artist {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chart-item__play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-primary);
+    border: none;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.4);
+}
+
+.chart-item:hover .chart-item__play-btn {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.chart-item__play-btn:hover {
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 968px) {
+    .genres-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .moods-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .explore-header__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .section-header__title {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 640px) {
+    .genres-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .moods-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chart-item__rank {
+        min-width: 40px;
+        font-size: var(--font-size-xl);
+    }
+
+    .chart-item__image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .explore-header {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .explore-header__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .section-header__title {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .genres-grid,
+    .moods-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .chart-item {
+        padding: var(--spacing-sm);
+    }
+
+    .chart-item__rank {
+        min-width: 30px;
+        font-size: var(--font-size-lg);
+    }
+}
+

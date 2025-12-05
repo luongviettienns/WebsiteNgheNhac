@@ -1,0 +1,290 @@
+/* ============================================
+   PAYMENT SUCCESS PAGE STYLES
+   ============================================ */
+
+.payment-success-page {
+    min-height: 100vh;
+    padding: 100px 0 var(--spacing-xxl);
+    background: var(--color-bg-primary);
+}
+
+.payment-success-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Success Icon */
+.payment-success__icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--spacing-lg);
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, #00D2D3 0%, #6C5CE7 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scaleIn 0.5s ease;
+    box-shadow: 0 0 40px rgba(0, 210, 211, 0.4);
+}
+
+.payment-success__icon i {
+    font-size: var(--font-size-4xl);
+    color: var(--color-text-primary);
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Success Title */
+.payment-success__title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.payment-success__message {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+/* Payment Success Card */
+.payment-success-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
+}
+
+.payment-success-card__header {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.payment-success-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.payment-success-card__title i {
+    color: var(--color-primary);
+}
+
+.payment-success-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Payment Info Section */
+.payment-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.payment-info-section__title {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.payment-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(var(--spacing-xs) / 2) 0;
+}
+
+.payment-info-item__label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.payment-info-item__value {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    text-align: right;
+}
+
+.payment-info-item__value--highlight {
+    color: var(--color-primary);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+}
+
+.payment-info-item__value--expiry {
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+.payment-info-item__value--active {
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.payment-info-item__value--active i {
+    color: var(--color-secondary);
+}
+
+.payment-info-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: var(--spacing-xs) 0;
+}
+
+/* Action Buttons */
+.payment-success__actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+/* Additional Info */
+.payment-success__info {
+    padding: var(--spacing-lg);
+    background: rgba(108, 92, 231, 0.1);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(108, 92, 231, 0.2);
+}
+
+.payment-success__info p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.payment-success__info p:last-child {
+    margin-bottom: 0;
+}
+
+.payment-success__info i {
+    color: var(--color-primary);
+}
+
+.payment-success__info a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.payment-success__info a:hover {
+    text-decoration: underline;
+}
+
+/* Completed Step Styles */
+.payment-step--completed .payment-step__number {
+    background: var(--gradient-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-primary);
+}
+
+.payment-step__line--completed {
+    background: var(--gradient-primary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .payment-success {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .payment-success__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .payment-success__icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .payment-info-card {
+        padding: var(--spacing-md);
+    }
+
+    .payment-info-item {
+        padding: var(--spacing-sm);
+    }
+
+    .payment-success__actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .payment-success__actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-success__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .payment-info-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .payment-success-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .payment-success__actions {
+        flex-direction: column;
+    }
+    
+    .payment-success__actions .btn {
+        width: 100%;
+    }
+    
+    .payment-info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+    
+    .payment-info-item__value {
+        text-align: left;
+    }
+}
+
